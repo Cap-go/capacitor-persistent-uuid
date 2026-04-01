@@ -18,7 +18,7 @@ bun run init-plugin downloader CapacitorDownloader app.capgo.downloader Cap-go k
 
 This command renames JS/iOS/Android identifiers, package metadata, and native file paths.
 The optional `android-lang` argument defaults to `java`; pass `kotlin` to generate Kotlin Android sources and Gradle setup.
-If the GitHub org/user is literally `java` or `kotlin`, pass the language as the 5th argument to disambiguate.
+The 4th argument always remains `GitHubOrg`; pass `Cap-go` as the 4th argument and `kotlin` as the 5th argument when you want the Kotlin Android scaffold with the default org.
 
 Immediately after running it in a generated plugin copy:
 

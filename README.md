@@ -81,8 +81,7 @@ bun run verify
 
 The `init-plugin` command updates package names, native class names, iOS/Android identifiers, and the local example app wiring.
 It accepts an optional fifth `android-lang` argument and defaults to `java`; pass `kotlin` to generate Kotlin Android sources and Gradle setup.
-If your GitHub org/user is literally `java` or `kotlin`, pass the language as the 5th argument to disambiguate, for example:
-`bun run init-plugin your-plugin YourPlugin app.capgo.yourplugin kotlin java`.
+To use Kotlin while keeping the default GitHub org, pass `Cap-go` as the 4th argument and `kotlin` as the 5th argument.
 
 After running `init-plugin` in your new plugin copy:
 

@@ -11,12 +11,11 @@ Arguments:
   ClassName     Optional, PascalCase plugin class (default from slug)
   package.id    Optional, Android/iOS reverse DNS id (default: app.capgo.<slug>)
   GitHubOrg     Optional, repository org/user (default: Cap-go)
-  android-lang  Optional, Android language: java or kotlin (default: java)
+  android-lang  Optional 5th argument, Android language: java or kotlin (default: java)
 
 Notes:
-  If your GitHub org/user is literally "java" or "kotlin", pass the language as the
-  5th argument to disambiguate. Example:
-    bun run init-plugin foo Foo app.capgo.foo kotlin java
+  To use Kotlin while keeping the default GitHub org, pass "Cap-go" as the 4th
+  argument and "kotlin" as the 5th argument.
 
 Example:
   bun run init-plugin downloader CapacitorDownloader app.capgo.downloader Cap-go kotlin
@@ -70,20 +69,8 @@ fi
 slug="$1"
 class_name="${2:-$(to_pascal_case "$slug")}"
 package_id="${3:-app.capgo.${slug//-/_}}"
-github_org="Cap-go"
-android_lang="java"
-
-if [[ $# -ge 4 ]]; then
-  candidate_arg_4="$4"
-  candidate_arg_4_lower="$(printf '%s' "$candidate_arg_4" | tr '[:upper:]' '[:lower:]')"
-
-  if [[ $# -eq 4 && "$candidate_arg_4_lower" =~ ^(java|kotlin)$ ]]; then
-    android_lang="$candidate_arg_4_lower"
-  else
-    github_org="$candidate_arg_4"
-    android_lang="$(printf '%s' "${5:-java}" | tr '[:upper:]' '[:lower:]')"
-  fi
-fi
+github_org="${4:-Cap-go}"
+android_lang="$(printf '%s' "${5:-java}" | tr '[:upper:]' '[:lower:]')"
 
 if [[ ! "$slug" =~ ^[a-z0-9][a-z0-9-]*$ ]]; then
   echo "Invalid plugin slug: $slug"
