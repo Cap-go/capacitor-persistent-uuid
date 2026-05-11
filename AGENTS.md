@@ -49,6 +49,9 @@ When shipping a new plugin from this template, the agent must perform all of the
    - `public/icons/plugins/<plugin-doc-slug>.svg` when the docs hero references a plugin icon
 5. Keep the README Capgo CTA header block and replace:
    - `{{PLUGIN_REF_SLUG}}` with the tracking slug (example: `native_audio`)
+6. Keep the README banner on the dynamic endpoint:
+   - `https://capgo.app/readme-banner.svg?repo=<GitHubOrg>/capacitor-<plugin-slug>`
+   - `bun run init-plugin` updates the default `repo=` value; re-check it after changing the Git remote or GitHub org.
 
 Website slug rule:
 
