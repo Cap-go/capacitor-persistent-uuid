@@ -2,6 +2,8 @@
 
 This file provides guidance to AI agents and contributors working on this Capacitor plugin template.
 
+Before using the template ensure you are using the latest version of the repository, as it may receive updates and improvements over time. Always check the commit history and pull requests for recent changes.
+
 ## Template First
 
 Run this before implementing real plugin logic:
