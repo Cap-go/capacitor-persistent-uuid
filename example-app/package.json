@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@capacitor/core": "^8.0.0",
-    "@capacitor/android": "^8.0.0",
-    "@capacitor/ios": "^8.0.0",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
     "@capgo/capacitor-plugin-template": "file:.."
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.0.0",
-    "vite": "^7.3.1"
+    "@capacitor/cli": "^8.3.4",
+    "vite": "^8.0.13"
   }
 }
