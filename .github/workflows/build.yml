@@ -20,12 +20,12 @@ jobs:
       id-token: write
     steps:
       - name: Check out
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
           filter: blob:none
           persist-credentials: false
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+      - uses: oven-sh/setup-bun@v2.2.0
       - name: Install dependencies
         id: install_code
         run: bun i
@@ -49,7 +49,7 @@ jobs:
       - name: Generate AI changelog
         id: changelog
         if: ${{ steps.previous_tag.outputs.found == 'true' }}
-        uses: mistricky/ccc@d9358b3eca472c0f41a6c1732bf073c0c54b837e # v0.2.6
+        uses: mistricky/ccc@v0.2.6
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -78,7 +78,7 @@ jobs:
             } > release-notes.md
           fi
       - name: Setup Node.js for npm publish
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        uses: actions/setup-node@v6.4.0
         with:
           node-version: 24.x
           registry-url: 'https://registry.npmjs.org'
@@ -94,7 +94,7 @@ jobs:
         run: npm publish --tag next --provenance --access public
       - name: Create GitHub release
         id: create_release
-        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda # v3.0.0
+        uses: softprops/action-gh-release@v3.0.0
         with:
           body_path: release-notes.md
           make_latest: true
