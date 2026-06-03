@@ -40,10 +40,13 @@ When shipping a new plugin from this template, the agent must perform all of the
    - `Capacitor plugin for ...`
 3. Set the GitHub repository homepage to:
    - `https://capgo.app/docs/plugins/<plugin-slug>/`
-4. Create a GitHub social preview image:
+4. Create and install the GitHub repository custom social preview image:
    - Start from `assets/github-social-template.svg`.
    - Replace the sample headline, accent line, description, and badges with plugin-specific copy.
-   - Export a 1280 x 640 PNG and upload it in GitHub repository settings as the social preview image.
+   - Export a 1280 x 640 PNG.
+   - Upload the PNG to the plugin repository's GitHub custom social preview slot: repository **Settings** -> **General** -> **Social preview** -> **Edit**.
+   - Do not treat the plugin repository as launch-ready until this custom GitHub social preview is uploaded. GitHub uses it for repository cards, link unfurls, and social shares.
+   - This is separate from the README banner, website docs images, and Capgo marketing assets.
    - Keep the install command as `npm i @capgo/capacitor-<plugin-slug>` because this is public marketing/docs copy.
    - Copy length targets: headline 4-9 words, accent line 2-6 words, description 60-110 characters, badges 1-3 words each.
    - Do not block plugin creation only because text length is imperfect. The SVG clips long copy inside safe regions; shorten only when the rendered image is hard to read or visibly clipped.
@@ -83,8 +86,8 @@ gh repo edit Cap-go/capacitor-<plugin-slug> \
   --description "Capacitor plugin for <what-it-does>." \
   --homepage "https://capgo.app/docs/plugins/<plugin-slug>/"
 
-# Social preview source lives in assets/github-social-template.svg.
-# Export it to a 1280 x 640 PNG and upload it in GitHub repository settings.
+# GitHub repository custom social preview source lives in assets/github-social-template.svg.
+# Export it to a 1280 x 640 PNG and upload it at Settings -> General -> Social preview.
 ```
 
 ## Quick Start

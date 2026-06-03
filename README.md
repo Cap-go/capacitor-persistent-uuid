@@ -32,7 +32,7 @@
 - [ ] Confirm examples in this file run against the real implementation.
 - [ ] Set GitHub repo description to start with `Capacitor plugin for ...`.
 - [ ] Set GitHub repo homepage to `https://capgo.app/docs/plugins/{{PLUGIN_SLUG}}/`.
-- [ ] Create a GitHub social preview from `assets/github-social-template.svg`, export it as a 1280 x 640 PNG, and upload it in GitHub repository settings.
+- [ ] Create a GitHub repository custom social preview from `assets/github-social-template.svg`, export it as a 1280 x 640 PNG, and upload it at GitHub **Settings** -> **General** -> **Social preview**.
 - [ ] Open docs/website PR and follow the complete website integration checklist in section **3) Open docs/website pull request**.
 - [ ] Run `bun run verify` before publishing.
 
@@ -133,7 +133,7 @@ If the repo already exists and is private:
 gh repo edit Cap-go/capacitor-{{PLUGIN_SLUG}} --visibility public --accept-visibility-change-consequences
 ```
 
-### 2) Set GitHub description, homepage, and social preview
+### 2) Set GitHub description, homepage, and custom social preview
 
 Description must always start with: `Capacitor plugin for ...`
 
@@ -143,13 +143,15 @@ gh repo edit Cap-go/capacitor-{{PLUGIN_SLUG}} \
   --homepage "https://capgo.app/docs/plugins/{{PLUGIN_SLUG}}/"
 ```
 
-Create the social preview before launch:
+Create the GitHub repository custom social preview before launch. GitHub uses this image for repository cards, link unfurls, and social shares; it is separate from the README banner and website docs images.
 
 1. Open `assets/github-social-template.svg`.
 2. Replace the sample headline, accent line, description, and badges with plugin-specific copy.
 3. Keep the terminal command as `npm i @capgo/capacitor-{{PLUGIN_SLUG}}` because social and docs copy should use public npm install syntax.
-4. Export the SVG as a 1280 x 640 PNG and upload it in GitHub repository settings under the social preview image.
-5. Copy targets: headline 4-9 words, accent line 2-6 words, description 60-110 characters, badges 1-3 words each. These are guardrails, not hard failures; the SVG clips longer text inside safe regions, so only shorten copy when the rendered image is hard to read or visibly clipped.
+4. Export the SVG as a 1280 x 640 PNG.
+5. Upload the PNG in GitHub under repository **Settings** -> **General** -> **Social preview** -> **Edit**.
+6. Do not treat the repository as launch-ready until this custom GitHub social preview is uploaded.
+7. Copy targets: headline 4-9 words, accent line 2-6 words, description 60-110 characters, badges 1-3 words each. These are guardrails, not hard failures; the SVG clips longer text inside safe regions, so only shorten copy when the rendered image is hard to read or visibly clipped.
 
 ### 3) Open docs/website pull request
 
