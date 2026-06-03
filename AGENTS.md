@@ -40,7 +40,17 @@ When shipping a new plugin from this template, the agent must perform all of the
    - `Capacitor plugin for ...`
 3. Set the GitHub repository homepage to:
    - `https://capgo.app/docs/plugins/<plugin-slug>/`
-4. Open a pull request on `https://github.com/Cap-go/website` (or monorepo folder `landing/`) and update:
+4. Create and install the GitHub repository custom social preview image:
+   - Start from `assets/github-social-template.svg`.
+   - Replace the sample headline, accent line, description, and badges with plugin-specific copy.
+   - Export a 1280 x 640 PNG.
+   - Upload the PNG to the plugin repository's GitHub custom social preview slot: repository **Settings** -> **General** -> **Social preview** -> **Edit**.
+   - Do not treat the plugin repository as launch-ready until this custom GitHub social preview is uploaded. GitHub uses it for repository cards, link unfurls, and social shares.
+   - This is separate from the README banner, website docs images, and Capgo marketing assets.
+   - Keep the install command as `npm i @capgo/capacitor-<plugin-slug>` because this is public marketing/docs copy.
+   - Copy length targets: headline 4-9 words, accent line 2-6 words, description 60-110 characters, badges 1-3 words each.
+   - Do not block plugin creation only because text length is imperfect. The SVG clips long copy inside safe regions; shorten only when the rendered image is hard to read or visibly clipped.
+5. Open a pull request on `https://github.com/Cap-go/website` (or monorepo folder `landing/`) and update:
    - `src/config/plugins.ts` (plugin registry entry)
    - `src/content/docs/docs/plugins/index.mdx` (plugin card in docs index)
    - `src/content/docs/docs/plugins/<plugin-doc-slug>/index.mdx`
@@ -49,9 +59,9 @@ When shipping a new plugin from this template, the agent must perform all of the
    - `astro.config.mjs` (pagefind bucket + docs sidebar entry)
    - `src/content/plugins-tutorials/en/<plugin-repo-slug>.md` (SEO tutorial page)
    - `public/icons/plugins/<plugin-doc-slug>.svg` when the docs hero references a plugin icon
-5. Keep the README Capgo CTA header block and replace:
+6. Keep the README Capgo CTA header block and replace:
    - `{{PLUGIN_REF_SLUG}}` with the tracking slug (example: `native_audio`)
-6. Keep the README banner on the dynamic endpoint:
+7. Keep the README banner on the dynamic endpoint:
    - `https://capgo.app/readme-banner.svg?repo=<GitHubOrg>/capacitor-<plugin-slug>`
    - `bun run init-plugin` updates the default `repo=` value; re-check it after changing the Git remote or GitHub org.
 
@@ -75,6 +85,9 @@ gh repo edit Cap-go/capacitor-<plugin-slug> --visibility public --accept-visibil
 gh repo edit Cap-go/capacitor-<plugin-slug> \
   --description "Capacitor plugin for <what-it-does>." \
   --homepage "https://capgo.app/docs/plugins/<plugin-slug>/"
+
+# GitHub repository custom social preview source lives in assets/github-social-template.svg.
+# Export it to a 1280 x 640 PNG and upload it at Settings -> General -> Social preview.
 ```
 
 ## Quick Start
