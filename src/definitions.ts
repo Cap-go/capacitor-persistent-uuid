@@ -1,21 +1,35 @@
 /**
- * Input payload for the echo call.
+ * Options used when reading or resetting the persistent UUID.
  */
-export interface EchoOptions {
+export interface PersistentUuidOptions {
   /**
-   * Arbitrary text that should be returned by native/web implementations.
+   * Optional namespace for the UUID.
+   *
+   * By default, native platforms use the app package/bundle identifier. Pass a
+   * stable custom scope when debug and production builds use different package
+   * identifiers but should share the same persistent UUID.
    */
-  value: string;
+  scope?: string;
 }
 
 /**
- * Echo response payload.
+ * Persistent UUID payload.
  */
-export interface EchoResult {
+export interface PersistentUuidResult {
   /**
-   * The same value passed to `echo`.
+   * RFC 4122 UUID generated once for the selected scope.
    */
-  value: string;
+  id: string;
+
+  /**
+   * The scope used to read or create the UUID.
+   */
+  scope: string;
+
+  /**
+   * True when this call generated and stored a new UUID.
+   */
+  created: boolean;
 }
 
 /**
@@ -29,13 +43,18 @@ export interface PluginVersionResult {
 }
 
 /**
- * Base API used by the template plugin.
+ * Persistent UUID API.
  */
-export interface PluginTemplatePlugin {
+export interface PersistentUuidPlugin {
   /**
-   * Echo a string to validate JS <-> native wiring.
+   * Read the persistent UUID, creating one when none exists for the selected scope.
    */
-  echo(options: EchoOptions): Promise<EchoResult>;
+  getId(options?: PersistentUuidOptions): Promise<PersistentUuidResult>;
+
+  /**
+   * Replace the stored UUID for the selected scope and return the new value.
+   */
+  resetId(options?: PersistentUuidOptions): Promise<PersistentUuidResult>;
 
   /**
    * Returns the platform implementation version marker.

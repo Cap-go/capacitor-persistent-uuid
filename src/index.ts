@@ -1,10 +1,10 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { PluginTemplatePlugin } from './definitions';
+import type { PersistentUuidPlugin } from './definitions';
 
-const PluginTemplate = registerPlugin<PluginTemplatePlugin>('PluginTemplate', {
-  web: () => import('./web').then((m) => new m.PluginTemplateWeb()),
+const PersistentUuid = registerPlugin<PersistentUuidPlugin>('PersistentUuid', {
+  web: () => import('./web').then((m) => new m.PersistentUuidWeb()),
 });
 
 export * from './definitions';
-export { PluginTemplate };
+export { PersistentUuid };

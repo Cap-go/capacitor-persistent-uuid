@@ -1,5 +1,5 @@
 {
-  "appId": "app.capgo.plugintemplate.example",
+  "appId": "app.capgo.persistent_uuid.example",
   "appName": "Plugin Template Example",
   "webDir": "dist"
 }

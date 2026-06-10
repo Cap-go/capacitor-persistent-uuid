@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@capgo/capacitor-plugin-template Example</title>
+    <title>@capgo/capacitor-persistent-uuid Example</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <main class="container">
-      <h1>@capgo/capacitor-plugin-template</h1>
-      <p class="lead">Quickly validate the template plugin wiring.</p>
+      <h1>@capgo/capacitor-persistent-uuid</h1>
+      <p class="lead">Validate persistent UUID creation and reset behavior.</p>
 
-      <label for="echo-value">Echo value</label>
-      <input id="echo-value" type="text" value="Hello from example app" />
+      <label for="uuid-scope">Scope</label>
+      <input id="uuid-scope" type="text" placeholder="Defaults to native package or bundle id" />
 
       <div class="actions">
-        <button id="run-echo">Run echo</button>
+        <button id="get-id">Get ID</button>
+        <button id="reset-id">Reset ID</button>
         <button id="get-version">Get plugin version</button>
       </div>
 
