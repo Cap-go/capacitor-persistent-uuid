@@ -1,6 +1,6 @@
 {
   "name": "@capgo/capacitor-persistent-uuid",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "Capacitor plugin for a persistent app UUID that survives reinstalls and updates.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
