@@ -22,3 +22,7 @@ Guidance for agents and contributors working on @capgo/capacitor-persistent-uuid
 - Docs URL: https://capgo.app/docs/plugins/persistent-uuid/.
 - Repository description must start with: Capacitor plugin for ...
 - Keep assets/github-social-template.svg specific to this plugin and export assets/github-social-preview.png for GitHub social preview before launch.
+
+## Timeout Policy
+
+- Keep CI, script, and runtime timeouts at 10 minutes or less. Use `timeout-minutes: 10` or lower in GitHub Actions and cap timeout values at `600000` ms, `600` seconds, or `10m` unless explicitly requested.
