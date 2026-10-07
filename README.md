@@ -1,13 +1,27 @@
 # @capgo/capacitor-persistent-uuid
 
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-persistent-uuid" alt="Capgo - Instant updates for Capacitor" /></a>
+Get a stable app-scoped UUID in your Capacitor app that survives reinstalls and store updates, without device identifiers or extra permissions.
+
+<a href="https://capgo.app/?ref=plugin_persistent_uuid"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-persistent-uuid" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_persistent_uuid">Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_persistent_uuid">Missing a feature? We will build the plugin for you</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_persistent_uuid">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_persistent_uuid">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
 
-Persistent app UUID for Capacitor. The plugin generates one random UUID per app scope and stores it with native persistence designed to survive app reinstalls, Android Studio reinstalls, Play/App Store updates, and OS updates.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-persistent-uuid/main/assets/github-social-preview.png" alt="@capgo/capacitor-persistent-uuid for Capacitor apps" width="300" />
+</p>
+
+## Key features
+
+- **Stable ID**: `getId()` returns the UUID, creating one on first use.
+- **Reset**: `resetId()` replaces the stored UUID.
+- **Scopes**: pass a custom `scope` to keep one ID across debug and production builds.
+- **Native persistence**: Keychain on iOS and `AccountManager` on Android.
+- **Platforms**: iOS, Android and Web. Web stores the ID in `localStorage`.
 
 ## Documentation
 
