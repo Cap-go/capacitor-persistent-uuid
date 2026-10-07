@@ -1,6 +1,6 @@
 # @capgo/capacitor-persistent-uuid
 
-Get a stable app-scoped UUID in your Capacitor app that survives reinstalls and store updates, without device identifiers or extra permissions.
+Get a stable app-scoped UUID in your Capacitor app with native persistence designed to survive reinstalls and store updates on iOS and Android, without device identifiers or extra permissions.
 
 <a href="https://capgo.app/?ref=plugin_persistent_uuid"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-persistent-uuid" alt="Capgo - Instant updates for Capacitor" /></a>
 
@@ -21,7 +21,7 @@ Get a stable app-scoped UUID in your Capacitor app that survives reinstalls and 
 - **Reset**: `resetId()` replaces the stored UUID.
 - **Scopes**: pass a custom `scope` to keep one ID across debug and production builds.
 - **Native persistence**: Keychain on iOS and `AccountManager` on Android.
-- **Platforms**: iOS, Android and Web. Web stores the ID in `localStorage`.
+- **Platforms**: iOS, Android and Web. Web stores the ID in `localStorage`, which does not survive a reinstall or clearing site data.
 
 ## Documentation
 
